@@ -57,7 +57,7 @@ export default function CourseForm({ courseId, onChange, toggleCourses }) {
 
     // Must handle failed responses (like not found)
     fetch(
-      `${process.env.REACT_APP_API}/developercourse/getCourse/${courseId}`,
+      `http://localhost:8080/developercourse/getCourse/${courseId}`,
       {
         method: 'GET',
         mode: 'cors',
@@ -104,7 +104,7 @@ export default function CourseForm({ courseId, onChange, toggleCourses }) {
     { setErrors, setSubmitting, ...rest },
   ) => {
     fetch(
-      `${process.env.REACT_APP_API}/developercourse/` +
+      `http://localhost:8080/developercourse/` +
         (isNew ? `addDeveloperCourse` : `update/${courseId}`),
       {
         method: isNew ? 'POST' : 'PUT',
@@ -125,7 +125,7 @@ export default function CourseForm({ courseId, onChange, toggleCourses }) {
   };
 
   const handleDelete = async () => {
-    fetch(`${process.env.REACT_APP_API}/developercourse/delete/${courseId}`, {
+    fetch(`http://localhost:8080/developercourse/delete/${courseId}`, {
       method: 'DELETE',
       mode: 'cors',
       headers: {

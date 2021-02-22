@@ -19,7 +19,7 @@ export default function TeacherList({ epoch }) {
   const [teachers, setTeachers] = React.useState([]);
 
   React.useEffect(() => {
-    fetch(`${process.env.REACT_APP_API}/teacher/getAll`, {
+    fetch(`http://localhost:8080/teacher/getAll`, {
       method: 'GET',
       mode: 'cors',
       headers: {

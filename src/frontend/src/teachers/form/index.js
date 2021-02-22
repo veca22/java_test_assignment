@@ -50,7 +50,7 @@ export default function TeacherForm({ teacherId, onChange, toggleCourses }) {
     const { signal } = controller;
 
     // Must handle failed responses (like not found)
-    fetch(`${process.env.REACT_APP_API}/teacher/getTeacher/${teacherId}`, {
+    fetch(`http://localhost:8080/teacher/getTeacher/${teacherId}`, {
       method: 'GET',
       mode: 'cors',
       signal,
@@ -95,7 +95,7 @@ export default function TeacherForm({ teacherId, onChange, toggleCourses }) {
     { setErrors, setSubmitting, ...rest },
   ) => {
     fetch(
-      `${process.env.REACT_APP_API}/teacher/` +
+      `http://localhost:8080/teacher/` +
         (isNew ? `addTeacher` : `update/${teacherId}`),
       {
         method: isNew ? 'POST' : 'PUT',
@@ -116,7 +116,7 @@ export default function TeacherForm({ teacherId, onChange, toggleCourses }) {
   };
 
   const handleDelete = async () => {
-    fetch(`${process.env.REACT_APP_API}/teacher/delete/${teacherId}`, {
+    fetch(`http://localhost:8080/teacher/delete/${teacherId}`, {
       method: 'DELETE',
       mode: 'cors',
       headers: {

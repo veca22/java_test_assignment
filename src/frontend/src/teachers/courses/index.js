@@ -41,7 +41,7 @@ export default function TeacherCourses({ teacherId }) {
     const isNew = isUndefined(values.id);
 
     fetch(
-      `${process.env.REACT_APP_API}/teacherdevelopercourse/` +
+      `http://localhost:8080/teacherdevelopercourse/` +
         (isNew ? `addTeacherCourse` : `update/${values.id}`),
       {
         method: isNew ? 'POST' : 'PUT',
@@ -66,7 +66,7 @@ export default function TeacherCourses({ teacherId }) {
 
   const handleDelete = () => {
     fetch(
-      `${process.env.REACT_APP_API}/teacherdevelopercourse/delete/${selectedCourse.id}`,
+      `http://localhost:8080/teacherdevelopercourse/delete/${selectedCourse.id}`,
       {
         method: 'DELETE',
         mode: 'cors',

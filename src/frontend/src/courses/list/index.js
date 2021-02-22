@@ -31,7 +31,7 @@ export default function CourseList({ epoch }) {
   const [courses, setCourses] = React.useState([]);
 
   React.useEffect(() => {
-    fetch(`${process.env.REACT_APP_API}/developercourse/getAll`, {
+    fetch(`http://localhost:8080/developercourse/getAll`, {
       method: 'GET',
       mode: 'cors',
       headers: {

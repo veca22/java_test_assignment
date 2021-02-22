@@ -25,7 +25,7 @@ export default function StudentList({ epoch }) {
   const [students, setStudents] = React.useState([]);
 
   React.useEffect(() => {
-    fetch(`${process.env.REACT_APP_API}/student/getAll`, {
+    fetch(`http://localhost:8080/student/getAll`, {
       method: 'GET',
       mode: 'cors',
       headers: {

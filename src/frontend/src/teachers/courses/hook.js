@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { filter, flow, map, get, find } from 'lodash/fp';
 
 function fetchStudentCourses(teacherId) {
-  return fetch(`${process.env.REACT_APP_API}/teacherdevelopercourse/getAll`, {
+  return fetch(`http://localhost:8080/teacherdevelopercourse/getAll`, {
     method: 'GET',
     mode: 'cors',
     headers: {
@@ -15,7 +15,7 @@ function fetchStudentCourses(teacherId) {
 }
 
 function fetchCourses() {
-  return fetch(`${process.env.REACT_APP_API}/developercourse/getAll`, {
+  return fetch(`http://localhost:8080/developercourse/getAll`, {
     method: 'GET',
     mode: 'cors',
     headers: {

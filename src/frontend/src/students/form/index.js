@@ -53,7 +53,7 @@ export default function StudentForm({ studentId, onChange, toggleCourses }) {
     const { signal } = controller;
 
     // Must handle failed responses (like not found)
-    fetch(`${process.env.REACT_APP_API}/student/getStudent/${studentId}`, {
+    fetch(`http://localhost:8080/student/getStudent/${studentId}`, {
       method: 'GET',
       mode: 'cors',
       signal,
@@ -98,7 +98,7 @@ export default function StudentForm({ studentId, onChange, toggleCourses }) {
     { setErrors, setSubmitting, ...rest },
   ) => {
     fetch(
-      `${process.env.REACT_APP_API}/student/` +
+      `http://localhost:8080/student/` +
         (isNew ? `addStudent` : `update/${studentId}`),
       {
         method: isNew ? 'POST' : 'PUT',
@@ -119,7 +119,7 @@ export default function StudentForm({ studentId, onChange, toggleCourses }) {
   };
 
   const handleDelete = async () => {
-    fetch(`${process.env.REACT_APP_API}/student/delete/${studentId}`, {
+    fetch(`http://localhost:8080/student/delete/${studentId}`, {
       method: 'DELETE',
       mode: 'cors',
       headers: {

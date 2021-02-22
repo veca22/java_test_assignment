@@ -5,7 +5,7 @@ import { map, flow, random, flatten, range, uniq } from 'lodash/fp';
 
 const injectStudents = flow(
   map((student) => {
-    return fetch(`${process.env.REACT_APP_API}/student/addStudent`, {
+    return fetch(`http://localhost:8080/student/addStudent`, {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -26,7 +26,7 @@ const injectStudents = flow(
 
 const injectTeachers = flow(
   map((teacher) => {
-    return fetch(`${process.env.REACT_APP_API}/teacher/addTeacher`, {
+    return fetch(`http://localhost:8080/teacher/addTeacher`, {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -45,7 +45,7 @@ const injectTeachers = flow(
 const injectCourse = flow(
   map((course) => {
     return fetch(
-      `${process.env.REACT_APP_API}/developercourse/addDeveloperCourse`,
+      `http://localhost:8080/developercourse/addDeveloperCourse`,
       {
         method: 'POST',
         mode: 'cors',
@@ -73,7 +73,7 @@ const generateUniqueList = (min, max, length) =>
 const injectTeacherCourse = (teachers, courses) => {
   async function postTeacherCourse(teacher, course) {
     return fetch(
-      `${process.env.REACT_APP_API}/teacherdevelopercourse/addTeacherCourse`,
+      `http://localhost:8080/teacherdevelopercourse/addTeacherCourse`,
       {
         method: 'POST',
         mode: 'cors',
@@ -104,7 +104,7 @@ const injectTeacherCourse = (teachers, courses) => {
 const injectStudentCourse = (students, courses) => {
   async function postStudentCourse(student, course) {
     return fetch(
-      `${process.env.REACT_APP_API}/studentdevelopercourse/addStudentDeveloperCourse`,
+      `http://localhost:8080/studentdevelopercourse/addStudentDeveloperCourse`,
       {
         method: 'POST',
         mode: 'cors',

@@ -47,7 +47,7 @@ export default function StudentCourses({ studentId }) {
     const isNew = isUndefined(values.id);
 
     fetch(
-      `${process.env.REACT_APP_API}/studentdevelopercourse/` +
+      `http://localhost:8080/studentdevelopercourse/` +
         (isNew ? `addStudentDeveloperCourse` : `update/${values.id}`),
       {
         method: isNew ? 'POST' : 'PUT',
@@ -73,7 +73,7 @@ export default function StudentCourses({ studentId }) {
 
   const handleDelete = () => {
     fetch(
-      `${process.env.REACT_APP_API}/studentdevelopercourse/delete/${selectedCourse.id}`,
+      `http://localhost:8080/studentdevelopercourse/delete/${selectedCourse.id}`,
       {
         method: 'DELETE',
         mode: 'cors',
