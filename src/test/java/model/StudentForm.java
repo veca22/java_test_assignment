@@ -34,7 +34,7 @@ public class StudentForm extends PageObject {
         return name.isDisplayed();
     }
 
-    public void enterData(String name, String surname, String accountName, String email, String password,
+    public void newStudentData(String name, String surname, String accountName, String email, String password,
                           String bankCardNumber){
         this.name.clear();
         this.name.sendKeys(name);
@@ -50,6 +50,14 @@ public class StudentForm extends PageObject {
 
         this.bankCardNumber.clear();
         this.bankCardNumber.sendKeys(bankCardNumber);
+    }
+
+    public void editStudentData(String name, String surname) {
+        this.name.clear();
+        this.name.sendKeys(name);
+
+        this.surname.clear();
+        this.surname.sendKeys(surname);
     }
 
     public void setSaveButton(String xpath) {
