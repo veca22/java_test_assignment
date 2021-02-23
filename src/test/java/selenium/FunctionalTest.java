@@ -1,6 +1,7 @@
 package selenium;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.managers.EdgeDriverManager;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -11,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class FunctionalTest {
 
@@ -21,6 +22,7 @@ public class FunctionalTest {
     @BeforeClass
     public static void setupClass(){
         WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.edgedriver().setup();
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         driver.manage().window().maximize();

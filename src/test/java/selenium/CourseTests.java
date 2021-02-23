@@ -2,7 +2,6 @@ package selenium;
 
 import model.CourseForm;
 import model.ReceiptPage;
-import model.StudentForm;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;

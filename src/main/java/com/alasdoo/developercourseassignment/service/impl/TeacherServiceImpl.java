@@ -57,7 +57,7 @@ public class TeacherServiceImpl {
         }
         oldTeacher.get().setTeacherName(teacherDTO.getTeacherName());
         oldTeacher.get().setTeacherSurname(teacherDTO.getTeacherSurname());
-        oldTeacher.get().setTeacherName(teacherDTO.getTeacherEmail());
+        oldTeacher.get().setTeacherEmail(teacherDTO.getTeacherEmail());
         teacherRepository.save(oldTeacher.get());
         return teacherMapper.transformToDTO(oldTeacher.get());
     }

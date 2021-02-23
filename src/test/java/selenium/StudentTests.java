@@ -7,9 +7,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.springframework.test.annotation.Rollback;
-
-import javax.transaction.Transactional;
 import java.util.concurrent.TimeUnit;
 
 public class StudentTests extends FunctionalTest {
@@ -146,7 +143,6 @@ public class StudentTests extends FunctionalTest {
         clickCourseInTable.click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Assertions.assertTrue(studentCoursesForm.isInitialized());
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //Set remove button and click it
         studentCoursesForm.setRemoveButton("/html/body/div/div/main/div[2]/div[3]/div[1]/form/div[3]/button[3]");
