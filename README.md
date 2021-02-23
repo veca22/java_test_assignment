@@ -10,6 +10,6 @@
 ## How to run the tests
 1. Start backend with `mvnw spring-boot:run` command
 2. Go to `src/frontend` and run `yarn start`
-3. Back to project folder and start tests with `mvnhttps://github.com/veca22/java_test_assignment/blob/main/README.mdw test` (This command will start all tests)
+3. Back to project folder and start tests with `mvnw test` (This command will start all tests)
 4. If you want to change browser with command line: `mvnw test -Dbrowser=chrome` (chrome,firefox,ie,edge)
 5. Default browser for tests is Firefox
