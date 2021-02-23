@@ -26,12 +26,14 @@ public class StudentForm extends PageObject {
 
     private WebElement removeButton;
 
+    private WebElement toggleCoursesButton;
+
     public StudentForm(WebDriver driver) {
         super(driver);
     }
 
     public boolean isInitialized() {
-        return name.isDisplayed();
+        return this.name.isDisplayed();
     }
 
     public void newStudentData(String name, String surname, String accountName, String email, String password,
@@ -68,6 +70,14 @@ public class StudentForm extends PageObject {
         this.removeButton = driver.findElement(By.xpath(xpath));
     }
 
+    public void setToggleCoursesButton(String xpath) {
+        this.toggleCoursesButton = driver.findElement(By.xpath(xpath));
+    }
+
+    public WebElement getToggleCoursesButton() {
+        return toggleCoursesButton;
+    }
+
     public ReceiptPage submitSave(){
         this.saveButton.click();
         return new ReceiptPage(driver);
@@ -77,4 +87,5 @@ public class StudentForm extends PageObject {
         this.removeButton.click();
         return new ReceiptPage(driver);
     }
+
 }
