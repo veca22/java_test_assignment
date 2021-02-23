@@ -1,10 +1,10 @@
 package selenium;
 
 import model.*;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 

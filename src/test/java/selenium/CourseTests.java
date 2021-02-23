@@ -2,11 +2,10 @@ package selenium;
 
 import model.CourseForm;
 import model.ReceiptPage;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
+import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class CourseTests extends FunctionalTest {
@@ -63,4 +62,5 @@ public class CourseTests extends FunctionalTest {
         ReceiptPage removeCoursePage = courseForm.submitRemove();
         Assertions.assertTrue(removeCoursePage.isInitialized());
     }
+
 }

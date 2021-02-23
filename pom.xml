@@ -18,6 +18,8 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
+		<junit-5.version>5.2.0</junit-5.version>
 	</properties>
 
 	<dependencies>
@@ -108,7 +110,13 @@
             <version>3.141.59</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.9.10</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>

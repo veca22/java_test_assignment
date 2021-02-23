@@ -4,9 +4,10 @@ import model.ReceiptPage;
 import model.StudentCoursesForm;
 import model.StudentForm;
 import org.junit.jupiter.api.Assertions;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
 public class StudentTests extends FunctionalTest {
