@@ -28,13 +28,29 @@ public class FunctionalTest {
 
     @BeforeClass
     public static void setupClass(){
-        WebDriverManager.firefoxdriver().setup();
-        WebDriverManager.edgedriver().setup();
-        WebDriverManager.chromedriver().setup();
-        WebDriverManager.iedriver().setup();
-        //Example how to change browser for tests
-        //driver = new ChromeDriver();
-        driver = new FirefoxDriver();
+        String browser = System.getProperty("browser");
+        if(browser != null) {
+            if (browser.equals("chrome")) {
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+            } else if (browser.equals("edge")) {
+                WebDriverManager.edgedriver().setup();
+                driver = new EdgeDriver();
+            } else if (browser.equals("ie")) {
+                WebDriverManager.iedriver().setup();
+                driver = new InternetExplorerDriver();
+            } else {
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
+            }
+        } else {
+            //Example how to change browser for tests
+            //WebDriverManager.chromedriver().setup();
+            //driver = new ChromeDriver();
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        }
+
         driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
